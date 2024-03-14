@@ -1,0 +1,41 @@
+<form name="signUpForm" [formGroup]="signUpFrom" (ngSubmit)="handleSubmit()">
+    <label for="first_name">First Name</label><br>
+    <input type="text"  name="first_name" class="input" formControlName="first_name" ><br>
+    
+    <label for="first_name">Last Name</label><br>
+    <input type="text"  name="last_name" class="input" formControlName="last_name" ><br>
+    
+    <label for="email">Email</label><br>
+    <input type="email"  name="email" class="input" formControlName="email"><br>
+    
+    <label for="email">Password</label><br>
+    <input type="password"  name="password" class="input" formControlName="password"><br>
+     
+    <label for="bio">Bio</label><br>
+    <input type="text"  name="bio" class="input" formControlName="bio"><br>
+    
+    
+
+    <label for="age">Age</label><br>
+    <input type="number"  min="1" max="100"  name="age" class="input" formControlName="age"><br>
+    
+    <label for="crown_member">Crown Member</label><br>
+    <input type="checkbox"  name="crown_member" class="input" formControlName="crown_member"><br>
+
+    <label for="sex">Sex</label><br>
+    <label for="sex">Female</label>
+    <input type="radio"  value="f"  name="sex" class="input" formControlName="sex"><br>
+    <label for="sex">Male</label>
+    <input type="radio"  value="m"  name="sex" class="input" formControlName="sex"><br>
+    <label for="device">Device</label><br>
+    <label for="device">Android</label>
+    <input type="radio"  value="android"  name="device" class="input" formControlName="device"><br>
+    <label for="device">IOS</label>
+    <input type="radio"  value="ios"  name="device" class="input" formControlName="device"><br>
+     <label for="device">Web</label>
+    <input type="radio"  value="web"  name="device" class="input" formControlName="device"><br>
+    <input  type="submit" value="Submit">
+
+
+</form>
+

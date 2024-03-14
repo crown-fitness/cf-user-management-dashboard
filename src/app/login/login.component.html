@@ -1,0 +1,17 @@
+<h2>Login</h2>
+<form   name="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
+    
+    <label for="email">Email</label><br>
+    <input type="email"  name="email" class="input" formControlName="email" [class.invalid]="loginForm.get('email')?.invalid"><br>
+   <div  *ngIf="validateEmail()">{{message.emailMsg}}</div>
+    <label for="password" >Password:</label><br>
+    <input type="password" id="password" name="password" formControlName="password" ><br><br>
+    <div *ngIf="validatePassword()">{{message.passwordMsg}}</div>
+    <input [disabled]="disableBtn()" type="submit" value="Submit">
+
+    <pre>{{json}}</pre>
+    <div  *ngFor="let err of errMsg;">
+    {{err}}
+    </div>
+</form> 
+  
