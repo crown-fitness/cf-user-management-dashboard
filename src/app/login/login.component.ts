@@ -1,8 +1,10 @@
-import { AuthService } from './../services/auth.service';
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 
+
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from './../services/auth.service';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -26,9 +28,16 @@ export class LoginComponent {
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private auth: AuthService
+    private auth: AuthService,
+    private ls:LocalStorageService
   ) {
+    // Sets user to LS and navigates to Home
     auth.currentUser.subscribe((value)=>{
+      console.log("value",value);
+      // Sets user to local storage
+      ls.saveToLocalStorage('currentUser',JSON.stringify(value));
+      router.navigate(['/home'])
+    
       this.json= `${JSON.stringify(value)}`
     })
     // errorMsgs
@@ -45,7 +54,7 @@ export class LoginComponent {
       email: this.loginForm.value.email || '',
       password: this.loginForm.value.password || '',
     });
-    console.log(res);
+
   }
 
   validateEmail() {
