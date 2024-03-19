@@ -23,7 +23,7 @@ export class LoginComponent {
   };
   displayUserLogin = ``;
   json = '';
-
+  
   errMsg:string[] = [];
   constructor(
     private router: Router,

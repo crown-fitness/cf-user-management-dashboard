@@ -11,6 +11,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+import { UsersService } from './services/users.service';
+import { UserComponent } from './user/user.component';
+
 
 
 @NgModule({
@@ -20,6 +24,8 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     SignupComponent,
     HomeComponent,
+    UsersComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,8 @@ import { HomeComponent } from './home/home.component';
   ],
   providers: [
     provideAnimationsAsync(),
-    AuthService
+    AuthService,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })

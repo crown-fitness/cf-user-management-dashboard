@@ -1,0 +1,16 @@
+<h1>Users {{allUsers.length}}</h1>
+
+<div *ngFor="let item of allUsers">
+
+    <p style="margin: 4px;">First Name: {{item.first_name}}</p>
+<p style="margin: 4px;">Last Name: {{item.last_name}}</p>
+<p style="margin: 4px;">ID: {{item._id}}</p>
+<p style="margin: 4px; color: #000;"
+    [ngStyle]="item.isVerified ? {'color':'green', 'font-weight':'bold'} :{'color':'red','font-weight':'bold'}">
+    Verified: {{item.isVerified}}</p>
+<div>
+    <button style="margin: 5px;" (click)="handleDeleteUser(item._id)">Delete item</button>
+    <button style="margin: 5px;" (click)="handleUpdateUser(item._id)">Update User</button>
+</div>
+<app-user></app-user>
+</div>

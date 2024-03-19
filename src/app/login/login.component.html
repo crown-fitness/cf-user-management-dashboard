@@ -6,12 +6,15 @@
    <div  *ngIf="validateEmail()">{{message.emailMsg}}</div>
     <label for="password" >Password:</label><br>
     <input type="password" id="password" name="password" formControlName="password" ><br><br>
+    
     <div *ngIf="validatePassword()">{{message.passwordMsg}}</div>
     <input [disabled]="disableBtn()" type="submit" value="Submit">
 
     <pre>{{json}}</pre>
+
     <div  *ngFor="let err of errMsg;">
     {{err}}
+    
     </div>
 </form> 
   
