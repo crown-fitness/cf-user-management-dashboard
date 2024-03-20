@@ -1,1 +1,11 @@
-<p>user works!</p>
+<p style="margin: 4px;">First Name: {{user.first_name | uppercase}}</p>
+<p style="margin: 4px;">Last Name: {{user.last_name | uppercase}}</p>
+<p style="margin: 4px; color: darkorange;">ID: {{user._id | uppercase}}</p>
+<p style="margin: 4px; color: #000;"
+    [ngStyle]="user.isVerified ? {'color':'green', 'font-weight':'bold'} :{'color':'red','font-weight':'bold'}">
+    Verified: {{user.isVerified}}</p>
+
+<div>
+    <button style="margin: 5px;" (click)="onDelete(user._id)">Delete item</button>
+    <button style="margin: 5px;" (click)="onUpdate(user._id)">Update User</button>
+</div>

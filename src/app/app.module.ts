@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { UsersService } from './services/users.service';
 import { UserComponent } from './user/user.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
@@ -26,6 +28,8 @@ import { UserComponent } from './user/user.component';
     HomeComponent,
     UsersComponent,
     UserComponent,
+    UserDetailsComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

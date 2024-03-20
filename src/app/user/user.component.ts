@@ -1,5 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
-import { EventEmitter } from 'stream';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -12,9 +11,10 @@ export class UserComponent {
   @Output() handleOnDelete = new EventEmitter()
   @Output() hanldeOnUpdate = new EventEmitter()
 constructor(){
-console.log(this.user);
+
 }
 onDelete(_id:string){
+
   this.handleOnDelete.emit(_id)
 }
 onUpdate(_id:string){
